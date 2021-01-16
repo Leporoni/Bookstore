@@ -16,11 +16,15 @@ public class AuthorController {
 
     @GetMapping
     public List<Author> listAll(){
+
         return authorRepository.findAll();
     }
 
     @PostMapping
     public Author create(@RequestBody Author author) {
+
         return authorRepository.save(author);
     }
+
+
 }

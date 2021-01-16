@@ -21,6 +21,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> listAll() {
+
         return this.bookRepository.findAll();
     }
 
@@ -44,6 +45,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getByName(String name) {
+
         return this.bookRepository.findByName(name);
     }
 }

@@ -20,6 +20,6 @@ public class Author {
 	private String email;
 	
 	@DBRef
-	private List<Book> books;
+	private Book book;
 
 }

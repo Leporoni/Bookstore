@@ -16,13 +16,17 @@ public class BookController {
 
     @GetMapping
     public List<Book> listAll(){
+
         return bookRepository.findAll();
     }
 
     @PostMapping
     public Book create(@RequestBody Book book) {
+
         return bookRepository.save(book);
     }
+
+
 
 
 }
