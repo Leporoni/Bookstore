@@ -1,7 +1,7 @@
 package com.leporonitech.bookstore.controller;
 
 import com.leporonitech.bookstore.model.Book;
-import com.leporonitech.bookstore.repository.BookRepository;
+import com.leporonitech.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,21 +12,17 @@ import java.util.List;
 public class BookController {
 
     @Autowired
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @GetMapping
     public List<Book> listAll(){
 
-        return bookRepository.findAll();
+        return bookService.listAll();
     }
 
     @PostMapping
     public Book create(@RequestBody Book book) {
 
-        return bookRepository.save(book);
+        return bookService.create(book);
     }
-
-
-
-
 }

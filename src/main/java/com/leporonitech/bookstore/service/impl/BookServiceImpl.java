@@ -48,4 +48,11 @@ public class BookServiceImpl implements BookService {
 
         return this.bookRepository.findByName(name);
     }
+
+    @Override
+    public void delete(Book book) {
+        this.bookRepository.delete(book);
+    }
+
+
 }

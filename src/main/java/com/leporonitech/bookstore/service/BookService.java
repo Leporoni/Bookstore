@@ -13,4 +13,6 @@ public interface BookService {
     public Book create(Book book);
 
     public List<Book> getByName(String name);
+
+    public void delete(Book book);
 }

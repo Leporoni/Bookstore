@@ -1,7 +1,7 @@
 package com.leporonitech.bookstore.controller;
 
 import com.leporonitech.bookstore.model.Author;
-import com.leporonitech.bookstore.repository.AuthorRepository;
+import com.leporonitech.bookstore.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +12,17 @@ import java.util.List;
 public class AuthorController {
 
     @Autowired
-    private AuthorRepository authorRepository;
+    private AuthorService authorService;
 
     @GetMapping
     public List<Author> listAll(){
 
-        return authorRepository.findAll();
+        return authorService.listAll();
     }
 
     @PostMapping
     public Author create(@RequestBody Author author) {
 
-        return authorRepository.save(author);
+        return authorService.create(author);
     }
-
-
 }
